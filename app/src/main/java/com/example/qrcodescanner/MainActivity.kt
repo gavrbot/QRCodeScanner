@@ -12,7 +12,6 @@ import com.budiyev.android.codescanner.CodeScanner
 import com.budiyev.android.codescanner.DecodeCallback
 import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
-import com.google.zxing.qrcode.encoder.QRCode
 import kotlinx.android.synthetic.main.activity_main.*
 
 private const val CAMERA_REQUEST_CODE = 101
@@ -37,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             formats = CodeScanner.ALL_FORMATS
 
             autoFocusMode = AutoFocusMode.SAFE
-            scanMode = ScanMode.SINGLE
+            scanMode = ScanMode.CONTINUOUS
             isAutoFocusEnabled = true
             isFlashEnabled = false
 
