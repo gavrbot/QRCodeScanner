@@ -57,21 +57,21 @@ public class Security {
 
     static {
         try {
-            Certificate cert = CertificateFactory.getInstance("X.509").generateCertificate(new ByteArrayInputStream(publicCheckKey.getBytes(StandardCharsets.UTF_8)));
-            Certificate[] certArray = new Certificate[1];
-            certArray[0] = cert;
+//            Certificate cert = CertificateFactory.getInstance("X.509").generateCertificate(new ByteArrayInputStream(publicCheckKey.getBytes(StandardCharsets.UTF_8)));
+//            Certificate[] certArray = new Certificate[1];
+//            certArray[0] = cert;
 
             privateKey = getPrivateRSAKey(privateCheckKey);
-            KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
-            keyStore.load(null);
-            keyStore.setEntry(
-                    "key2",
-                    new KeyStore.PrivateKeyEntry(privateKey, certArray),
-                    new KeyProtection.Builder(KeyProperties.PURPOSE_DECRYPT)
-                            .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_RSA_PKCS1)
-                            .build());
-        } catch (InvalidKeySpecException | CertificateException | KeyStoreException | IOException | NoSuchAlgorithmException e) {
-        // } catch (InvalidKeySpecException e) {
+//            KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
+//            keyStore.load(null);
+//            keyStore.setEntry(
+//                    "key2",
+//                    new KeyStore.PrivateKeyEntry(privateKey, certArray),
+//                    new KeyProtection.Builder(KeyProperties.PURPOSE_DECRYPT)
+//                            .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_RSA_PKCS1)
+//                            .build());
+        //} catch (InvalidKeySpecException | CertificateException | KeyStoreException | IOException | NoSuchAlgorithmException e) {
+        } catch (InvalidKeySpecException e) {
             e.printStackTrace();
         }
     }
